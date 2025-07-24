@@ -1,0 +1,51 @@
+<!-- daily-quotes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Quotes - Mentally Sane</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: #fffbe6;
+    }
+    .quote-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Daily Inspiration</h2>
+    <div class="quote-box text-center">
+      <p id="quote" class="fs-4">Loading...</p>
+    </div>
+    <div class="text-center mt-4">
+      <button onclick="newQuote()" class="btn btn-outline-primary">Show Another Quote</button><br>
+      <a href="PROJECT.html" class="btn btn-link mt-3">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      "You don’t have to control your thoughts. You just have to stop letting them control you. – Dan Millman",
+      "Every day may not be good... but there’s something good in every day. – Alice Morse Earle",
+      "Mental health is not a destination but a process. – Noam Shpancer",
+      "Self-care is how you take your power back. – Lalah Delia",
+      "Your present circumstances don’t determine where you can go; they merely determine where you start. – Nido Qubein"
+    ];
+
+    function newQuote() {
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote").textContent = quote;
+    }
+
+    window.onload = newQuote;
+  </script>
+</body>
+</html>
